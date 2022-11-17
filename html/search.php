@@ -8,8 +8,13 @@
 </head>
 <body>
 	<?php include 'header.html'?>
-<section>
-	
-</section>
+	<p>Page recherche</p>
+
+	<?php if (empty($_POST['search_bar'])){ ?>
+		<p>Veuillez indiquer une recette dans la recherche ci-dessus.</p>
+	<?php } else { ?>
+		<p>Votre résultat pour : <?php echo $_POST['search_bar']; ?></p>
+	<?php } ?>
+
 </body>
 </html>

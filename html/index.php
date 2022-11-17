@@ -8,5 +8,6 @@
 </head>
 <body>
 	<?php include 'header.html' ?>
+	<p>Page accueil</p>
 </body>
 </html>

@@ -1,3 +1,100 @@
 html{
 	background-color: #fbf2e9;
 }
+
+.logo{
+	max-width: 250px;
+	height: 250px;
+}
+
+header{
+	text-align: center;
+}
+
+header h1{
+	margin: 0px;
+}
+
+.search_bar{
+	margin: 0 auto;
+	padding: 10px 5px;
+	background-color: #cf6757;
+	border-top: black solid 1px;
+	border-bottom: black solid 4px;
+}
+
+.search_bar input{
+	width: 210px;
+}
+
+#create_form{
+	width: 25%;
+	height: 620px;
+	margin: 10px;
+	padding: 15px;
+	display: inline-block;
+	border: #545454 1px solid;
+	border-radius: 20px;
+	text-align: center;
+	background-color: #545454;
+	color: white;
+}
+
+#recipes_list{
+	width: 60%;
+	height: 620px;
+	margin: 10px;
+	padding: 15px;
+	display: inline-block;
+	border: #545454 1px solid;
+	border-radius: 20px;
+	text-align: center;
+	background-color: #545454;
+	color: white;
+}
+
+.admin_forms{
+	margin-top: 15px;
+	height: 700px;
+	width: 100%;
+	text-align: center;
+}
+
+#create_form form{
+	width: 90%;
+}
+
+#create_form *{
+	text-align: center;
+	display: inline-block;
+}
+
+#create_form label{
+	margin-top: 15px;
+	margin-bottom: 4px;
+}
+
+#create_form input{
+	width: 70%;
+}
+
+#create_form button{
+	margin: 20px;
+}
+
+#create_form textarea{
+	width: 70%;
+	height: 140px;
+	resize: none;
+}
+
+#create_form input[type=number]{
+	width: 60px;
+}
+
+.form_title{
+	width: 100%;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}

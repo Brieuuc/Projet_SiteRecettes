@@ -1,8 +1,13 @@
 <header>
+	<a href="search.php">SEARCH</a><br>
+	<a href="admin.php">ADMIN</a><br>
+	<a href="index.php"><img class="logo" src="../images/logo.png" alt="Logo - Aux Bonnes Recettes"></a>
 	<h1>Aux bonnes recettes</h1>
 	<p>Trouvez plein de recettes sur cet incroyable site qui n'est en fait qu'un prototype réalisé par les bg de BTS SNIR !</p>
-	<form>
-		<input type="text" name="" placeholder="Indiquez une recette">
-		<button type="submit">Rechercher</button>
-	</form>
+	<div>
+		<form class="search_bar" action="search.php" method="POST">
+			<input type="search" name="search_bar" placeholder="Entrez une recette souhaitée">
+			<button type="submit">Rechercher</button>
+		</form>
+	</div>
 </header>
