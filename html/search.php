@@ -15,6 +15,6 @@
 	<?php } else { ?>
 		<p>Votre résultat pour : <?php echo $_POST['search_bar']; ?></p>
 	<?php } ?>
-
+	<?php include 'footer.html' ?>
 </body>
 </html>

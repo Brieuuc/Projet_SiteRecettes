@@ -2,9 +2,8 @@ html{
 	background-color: #fbf2e9;
 }
 
-.logo{
-	max-width: 250px;
-	height: 250px;
+body{
+	margin: 0px;
 }
 
 header{
@@ -13,6 +12,11 @@ header{
 
 header h1{
 	margin: 0px;
+}
+
+.logo{
+	max-width: 250px;
+	height: 250px;
 }
 
 .search_bar{
@@ -27,6 +31,20 @@ header h1{
 	width: 210px;
 }
 
+footer{
+	height: 100px;
+	width: 100%;
+	background-color: #cf6757;
+	border-top: black 4px solid;
+}
+
+.admin_forms{
+	padding-top: 15px;
+	height: 700px;
+	width: 100%;
+	text-align: center;
+}
+
 #create_form{
 	width: 25%;
 	height: 620px;
@@ -38,6 +56,8 @@ header h1{
 	text-align: center;
 	background-color: #545454;
 	color: white;
+	position: absolute;
+	left: 4%;
 }
 
 #recipes_list{
@@ -51,14 +71,11 @@ header h1{
 	text-align: center;
 	background-color: #545454;
 	color: white;
+	position: absolute;
+	right: 4%;
 }
 
-.admin_forms{
-	margin-top: 15px;
-	height: 700px;
-	width: 100%;
-	text-align: center;
-}
+
 
 #create_form form{
 	width: 90%;

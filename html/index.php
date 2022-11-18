@@ -9,5 +9,6 @@
 <body>
 	<?php include 'header.html' ?>
 	<p>Page accueil</p>
+	<?php include 'footer.html' ?>
 </body>
 </html>
