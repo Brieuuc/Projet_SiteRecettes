@@ -127,3 +127,30 @@ footer{
 	font-size: larger;
 	text-align: center;
 }
+
+.result_action{
+	text-align: center;
+	font-weight: bold;
+	color: rgb(1, 97, 1);
+	font-size: large;
+}
+
+.recipes_display{
+	margin: auto;
+	height: 85%;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+}
+
+.admin_recette{
+	height: 160px;
+	width: 120px;
+	padding: 10px;
+	display: inline-block;
+	word-wrap: break-word;
+}
+
+.logo_manage{
+	height: 32px;
+	width: 32px;
+}

@@ -16,8 +16,15 @@
         saveIngredients($idRecipe,$_POST['ingredients']);
         saveSteps($idRecipe,$_POST['steps']);
         savePreptime($idRecipe,$_POST['time']);
-        echo('La recette a été créée !');
+        ?><p class="result_action"><?php echo('La recette "'.$_POST['nom'].'" (ID = '.$idRecipe.') a été créée !');?></p><?php
     }
+    ?>
+    <?php
+        if  (!empty($_GET['id'])){
+            $RecipeName = getRecipe($_GET['id'])['title'];
+            deleteRecipe($_GET['id']);
+            ?><p class="result_action"><?php echo('La recette "'.$RecipeName.'" (ID = '.$_GET['id'].') a été supprimée !');?></p><?php
+        }
     ?>
 <!-- Formulaire création d'une recette -->
     <div class="admin_forms">
@@ -37,17 +44,25 @@
         </div>
 <!-- Affichage des recettes -->
         <div id="recipes_list">
-            <p>Liste des recettes</p></br>
+            <p class="form_title">Liste des recettes</p></br>
+            <div class="recipes_display">
             <?php
             $allRecipes = getAllRecipes();
-            foreach ($allRecipes as $Recipe){?>
-                <div>
-                    <?php echo "ID : ".$Recipe['id']?></br>
-                    <?php echo "Nom : ".$Recipe['name']?></br>
-                </div>
-                
-            <?php}
+            if (!empty($allRecipes)){
+                foreach ($allRecipes as $Recipe){?>
+                    <div class="admin_recette">
+                        <p>ID : <?php echo $Recipe['id']?></br>
+                        Nom : <?php echo $Recipe['title']?></p>
+                        <a href="admin_modif.php?id=<?php echo $Recipe['id']?>"><img src="../images/modify.png" class="logo_manage"></img></a>
+                        <a href="admin.php?id=<?php echo $Recipe['id']?>"><img src="../images/delete.png" class="logo_manage"></img></a>
+                    </div><?php
+                }
+            }
+            else{
+                echo "Aucune recette n'est créée.";
+            }
             ?>
+            </div>
         </div>
     </div>
 <!-- Bas de page -->
