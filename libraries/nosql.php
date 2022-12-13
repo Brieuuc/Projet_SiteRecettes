@@ -28,7 +28,7 @@ class NoSQL {
     }
     
     protected static function escapePath(string $toEscape): string {
-        return preg_replace('`[^a-zA-Z0-9_/-]`', '', str_replace(DIRECTORY_SEPARATOR, '/', $toEscape));
+        return preg_replace('`[^a-zA-Z0-9_./-]`', '', str_replace(DIRECTORY_SEPARATOR, '/', $toEscape));
     }
     
     protected $storage = null;

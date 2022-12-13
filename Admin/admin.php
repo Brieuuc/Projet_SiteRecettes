@@ -12,13 +12,10 @@
     <?php
     if  (!empty($_POST['nom'])){
         $idRecipe = createRecipe($_POST['nom']);
-        saveIngredients($_POST['ingredients']);
-        saveSteps($_POST['steps']);
+        saveIngredients($idRecipe,$_POST['ingredients']);
+        saveSteps($idRecipe,$_POST['steps']);
         savePreptime($idRecipe,$_POST['time']);
-        echo('La recette a été créé !');
-    }
-    else{
-        echo('Vide');
+        echo('La recette a été créée !');
     }
     ?>
 
