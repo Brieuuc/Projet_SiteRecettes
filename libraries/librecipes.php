@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/nosql.php';
 
-NoSQL::configure('_data');
+NoSQL::configure('../_data');
 
 function createRecipe(string $title) {
     $saved = NoSQL::getInstance('recipes')->save(['title' => $title,]);
