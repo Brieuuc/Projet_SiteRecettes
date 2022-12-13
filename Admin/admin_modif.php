@@ -9,21 +9,38 @@
 </head>
 <body>
 	<?php include '../html/header.php'?>
+<!-- PHP Modification de recette -->
+    <?php
+    if (empty($_POST)){
+        $Recipe = getRecipe($_GET['id']);
+    }
+    else{
+        saveTitle($_POST['id'],$_POST['title']);
+        saveIngredients($_POST['id'],$_POST['ingredients']);
+        saveSteps($_POST['id'],$_POST['steps']);
+        savePreptime($_POST['id'],$_POST['time']);
+        $Recipe = getRecipe($_POST['id']);
+        ?><p class="result_action"><?php echo "La recette d'ID = ".$_POST['id']." a été modifiée !";?></p>
+        <a href="admin.php">RETOUR sur page Admin</a><?php
+    }
+    ?>
+<!-- Formulaire Modification de recette -->
     <div id="modif_form"> 
-        <!--?php $recipe = getRecipe($id) ?-->
-        <form name="modif" method="_POST">
+        <form name="modif" method="POST">
             <p class="form_title">Modifier une recette</p><br>
             <label>Nom</label><br>
-            <input type="text" value="<?php echo $recipe['title']?>" placeholder="Indiquez le nom de la recette" required="required"><br>
+            <input type="text" name="title" value="<?php echo $Recipe['title']?>" placeholder="Indiquez le nom de la recette" required="required"><br>
             <label>Liste des ingrédients</label><br>
-            <textarea required="required" value="<?php echo $recipe['ingredients']?>" placeholder="Indiquez la liste des ingrédients"></textarea><br>
+            <textarea name="ingredients" placeholder="Indiquez la liste des ingrédients" required="required"><?php echo $Recipe['ingredients']?></textarea><br>
             <label>Consignes de préparation</label><br>
-            <textarea required="required" value="<?php echo $recipe['steps']?>" placeholder="Indiquez les consignes de préparations"></textarea><br>
+            <textarea name="steps" placeholder="Indiquez les consignes de préparations" required="required"><?php echo $Recipe['steps']?></textarea><br>
             <label>Temps de préparation (en minutes)</label><br>
-            <input type="number" value="<?php echo $recipe['time']?>" required="required" placeholder="0"><br>
-            <button type="submit">Modifier la recette</button>
+            <input type="number" name="time" value="<?php echo $Recipe['time']?>" placeholder="0" required="required"><br>
+            <button type="submit" target="admin_modif.php?id=<?php echo $_GET['id']?>">Modifier la recette</button>
+            <input name="id" type="hidden" value="<?php echo $_GET['id']?>" required="required"><br>
         </form>
     </div>
+<!-- Bas de page -->
     <?php include '../html/footer.html' ?>
 </body>
 </html>
