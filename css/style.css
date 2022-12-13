@@ -35,7 +35,9 @@ footer{
 	height: 100px;
 	width: 100%;
 	background-color: #cf6757;
+	color: white;
 	border-top: black 4px solid;
+	text-align: center;
 }
 
 .admin_forms{
