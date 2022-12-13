@@ -19,6 +19,7 @@
         ?><p class="result_action"><?php echo('La recette "'.$_POST['nom'].'" (ID = '.$idRecipe.') a été créée !');?></p><?php
     }
     ?>
+<!-- PHP Supression de recette -->
     <?php
         if  (!empty($_GET['id'])){
             $RecipeName = getRecipe($_GET['id'])['title'];
