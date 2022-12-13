@@ -11,7 +11,7 @@
 
     <?php
     if  (!empty($_POST['nom'])){
-        $idRecipe = create($_POST['nom']);
+        $idRecipe = createRecipe($_POST['nom']);
         saveIngredients($_POST['ingredients']);
         saveSteps($_POST['steps']);
         savePreptime($idRecipe,$_POST['time']);

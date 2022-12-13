@@ -1,7 +1,6 @@
 <header>
 	<?php
-	include("/libraries/librecipes.php");
-	include("/libraries/nosql.php");
+	include_once '../libraries/librecipes.php';
 	?>
 	<a href="/html/search.php">SEARCH</a><br>
 	<a href="/Admin/admin.php">ADMIN</a><br>
