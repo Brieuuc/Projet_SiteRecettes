@@ -8,7 +8,7 @@
     <link >
 </head>
 <body>
-	<?php include '../html/header.html' ?>
+	<?php include '../html/header.php'?>
     <div id="modif_form"> 
         <!--?php $recipe = getRecipe($id) ?-->
         <form name="modif" method="_POST">
