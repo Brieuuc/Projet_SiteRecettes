@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
 <body>
-	<?php include 'header.html'?>
+	<?php include 'header.php'?>
 	<p>Page recherche</p>
 
 	<?php if (empty($_POST['search_bar'])){ ?>
