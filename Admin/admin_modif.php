@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Aux bonnes recettes - Modifier recette</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link rel="icon" type="image/x-icon" href="../images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/logo.png">
     <link >
 </head>
 <body>
-	<?php include 'header.html' ?>
+	<?php include '../html/header.html' ?>
     <div id="modif_form"> 
-        <?php $recipe = getRecipe($id) ?>
+        <!--?php $recipe = getRecipe($id) ?-->
         <form name="modif" method="_POST">
             <p class="form_title">Modifier une recette</p><br>
             <label>Nom</label><br>
@@ -24,6 +24,6 @@
             <button type="submit">Modifier la recette</button>
         </form>
     </div>
-    <?php include 'footer.html' ?>
+    <?php include '../html/footer.html' ?>
 </body>
 </html>
