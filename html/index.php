@@ -13,28 +13,12 @@
 	<?php if (empty(getAllRecipes())){
 		echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>Malheuresement il n'y a pour le moment aucune recette référencé...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 	}
-// Accueil si 1 recette sans commentaire
 	else{
 		$AllRecipes = getAllRecipes();
-		$first = true;
-		foreach ($AllRecipes as $RecipeId){
-			if ($first){
-				$RecipeIdNote = $RecipeId['id'];
-				$RecipeIdLast = $RecipeId['id'];
-				$RecipeIdTime = $RecipeId['id'];
-				$first = false;
-			}
-			else{
-				if(getRecipe($RecipeIdNote)['time'] > getRecipe($RecipeId)['time']){
-					$RecipeIdNote = $Recipe;
-				} 
-			}
-
-		}
 		if (count($AllRecipes) == 1){
 			echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site ne comporte qu'une seule recette...<br>";
 			foreach ($AllRecipes as $Recipe){
-			};
+			}
 			$RecipeComments = getRecipeComments($Recipe['id']);
 			if (empty(getRecipeComments($Recipe['id']))){
 				echo "
@@ -45,44 +29,45 @@
 				</div>
 				";
 			}
-// Accueil si 1 recette avec commentaire(s)
-			else{
-				foreach ($RecipeComments as $Note){
-					$Notes = $Notes + $Note['note'];
-				};
-				foreach ($RecipeComments as $Note){
-					$Notes = $Notes + $Note['note'];
-				};
-				echo "
-				<div>
-					<h2>Notre unique recette</h2>
-					<h3>".$Recipe['title']."<h3>
-					<p>Note : ".$Note['note']."/5 - Temps de préparation : ".$Recipe['time']." minutes</p>
-				</div>
-				";
-			}
 		}
 // Accueil si plusieurs recettes
 		else{
+			$first = true;
+			foreach ($AllRecipes as $Recipe){
+				if ($first){
+					$RecipeNote = $Recipe;
+					$RecipeLast = $Recipe;
+					$RecipeTime = $Recipe;
+					$first = false;
+				}
+				else{
+					if($RecipeTime['time'] > $Recipe['time']){
+						$RecipeTime = $Recipe;
+					};
+				}
+			}
+			$RecipeLast = end($AllRecipes);
 			echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site comporte ".count($AllRecipes)." recettes.<br>";
 			echo "
-			<div>
+			<a href='recipe?id=".$RecipeLast['id']."'><div>
 				<h2>Notre dernière recette</h2>
-				<h3>".$Recipe['title']."<h3>
-				<p>Note : ".$Note['note']."/5 - Temps de préparation : ".$Recipe['time']." minutes</p>
-			</div>";
+				<h3>".$RecipeLast['title']."</h3>
+				<p>Note : X/5 - Temps de préparation : ".$RecipeLast['time']." minutes</p>
+			</div></a>";
 
 			echo "
-			<div>
+			<a href='recipe?id=".$RecipeNote['id']."'><div>
 				<h2>Recette la mieux notée</h2>
-			</div>";
-			$Recipe = getRecipe($RecipeIdTime);
+				<h3>".$RecipeNote['title']."</h3>
+				<p>Note : X/5 - Temps de préparation : ".$RecipeNote['time']." minutes</p>
+			</div></a>";
+
 			echo "
-			<div>
+			<a href='recipe?id=".$RecipeTime['id']."'><div>
 				<h2>Recette la plus rapide</h2>
-				<h3>".$Recipe['title']."<h3>
-				<p>Note : ".$Note['note']."/5 - Temps de préparation : ".$Recipe['time']." minutes</p>
-			</div>
+				<h3>".$RecipeTime['title']."</h3>
+				<p>Note : X/5 - Temps de préparation : ".$RecipeTime['time']." minutes</p>
+			</div></a>
 			";
 		}
 	}
