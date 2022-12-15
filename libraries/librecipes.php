@@ -119,3 +119,18 @@ function getRecipeComments($recipeId): array {
     }
     return $returns;
 }
+// Renvoie la moyenne des notes, si aucun avis renvoie -1
+function moyenneNote($Recipe){
+    if (getRecipeComments($Recipe['id'])){
+        $moyenneNote = 0;
+        $Notes = getRecipeComments($Recipe['id']);
+        foreach($Notes as $Note){
+            $moyenneNote = $moyenneNote + $Note['note']; 
+        }
+        $moyenneNote = $moyenneNote / count($Notes);
+        return $moyenneNote;
+    }
+    else{
+        return -1;
+    }
+}

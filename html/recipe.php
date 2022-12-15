@@ -22,25 +22,23 @@
     }
     ?>
 <!-- PHP Récupération détails recette -->
-    <?php $Recipe = getRecipe($_GET['id']); ?>
+    <?php 
+    $Recipe = getRecipe($_GET['id']);
+    $Note = moyenneNote($Recipe);
+    if ($Note == -1){
+        $NoteFinale = 'Aucune';
+    }
+    else{
+        $NoteFinale = $Note.'/5';
+    }
+    ?>
 <!-- Affichage Recette -->
     <div class="recette">
         <h2><?php echo $Recipe['title'];?></h2>
         <!-- Affichage Note / Temps de préparation SI AUCUN AVIS-->
         <?php
-        if (empty(getRecipeComments($_GET['id']))){
-            echo "<div>Note des internautes : Aucun (0 avis)  -  <img src='../images/hourglass.png' class='logo_manage' alt='Temps'>".$Recipe['time']." minutes</div>";
-        }
-        // Affichage Note / Temps de préparation SI AVIS EXISTANT(S)
-        else{
-            $RecipeComments = getRecipeComments($_GET['id']);
-            $Notes = 0;
-            foreach($RecipeComments as $Note){
-                $Notes = $Notes + $Note['note'];
-            }
-            $Notes = $Notes / count($RecipeComments);
-            echo "<div>Note des internautes : ".$Notes." (".count($RecipeComments)." avis)  -  <img src='../images/hourglass.png' class='logo_manage' alt='Temps'>".$Recipe['time']." minutes</div>";
-        }
+        $RecipeComments = getRecipeComments($_GET['id']);
+        echo "<div>Note des internautes : ".$NoteFinale." (".count($RecipeComments)." avis)  -  <img src='../images/hourglass.png' class='logo_manage' alt='Temps'>".$Recipe['time']." minutes</div>";
         ?>
         <!-- Affichage Ingrédients / Consignes de préparation -->
         <h3>Ingrédients</h3>
