@@ -155,3 +155,16 @@ footer{
 	height: 32px;
 	width: 32px;
 }
+
+.affichage_recette{
+	white-space: pre;
+}
+
+.index_recette{
+	margin: 20px;
+	padding: 5px;
+}
+
+.index_recette *{
+	margin: 5px;
+}

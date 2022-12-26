@@ -22,9 +22,9 @@
 			$RecipeComments = getRecipeComments($Recipe['id']);
 			if (empty(getRecipeComments($Recipe['id']))){
 				echo "
-				<div>
+				<div class='index_recette'>
 					<h2>Notre unique recette</h2>
-					<h3>".$Recipe['title']."<h3>
+					<h3>".$Recipe['title']."</h3>
 					<p>Note : Aucune - Temps de préparation : ".$Recipe['time']."</p>
 					<a href='recipe?id=".$Recipe['id']."'>Voir la recette</a>
 				</div>
@@ -60,7 +60,7 @@
 			}
 			echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site comporte ".count($AllRecipes)." recettes.<br>";
 			echo "
-			<div>
+			<div class='index_recette'>
 				<h2>Notre dernière recette</h2>
 				<h3>".$RecipeLast['title']."</h3>
 				<p>Note : ".$NoteFinale." - Temps de préparation : ".$RecipeLast['time']." minutes</p>
@@ -70,7 +70,7 @@
 			$Note = moyenneNote($RecipeNote);
 			if ($Note > -1){
 				echo "
-				<div>
+				<div class='index_recette'>
 					<h2>Recette la mieux notée</h2>
 					<h3>".$RecipeNote['title']."</h3>
 					<p>Note : ".$Note."/5 - Temps de préparation : ".$RecipeNote['time']." minutes</p>
@@ -87,7 +87,7 @@
 				$NoteFinale = $Note.'/5';
 			}
 			echo "
-			<div>
+			<div class='index_recette'>
 				<h2>Recette la plus rapide</h2>
 				<h3>".$RecipeTime['title']."</h3>
 				<p>Note : ".$NoteFinale." - Temps de préparation : ".$RecipeTime['time']." minutes</p>

@@ -38,19 +38,19 @@
         <!-- Affichage Note / Temps de préparation SI AUCUN AVIS-->
         <?php
         $RecipeComments = getRecipeComments($_GET['id']);
-        echo "<div>Note des internautes : ".$NoteFinale." (".count($RecipeComments)." avis)  -  <img src='../images/hourglass.png' class='logo_manage' alt='Temps'>".$Recipe['time']." minutes</div>";
+        echo "<div>Note des internautes : ".$NoteFinale." (".count($RecipeComments)." avis)  -  <img src='../images/hourglass.png' class='logo_manage' title='Temps' alt='Temps'>".$Recipe['time']." minutes</div>";
         ?>
         <!-- Affichage Ingrédients / Consignes de préparation -->
         <h3>Ingrédients</h3>
-        <p><?php echo $Recipe['ingredients'];?></p>
+        <p class='affichage_recette'><?php echo $Recipe['ingredients'];?></p>
         <h3>Etapes</h3>
-        <p><?php echo $Recipe['steps'];?></p>
+        <p class='affichage_recette'><?php echo $Recipe['steps'];?></p>
     </div>
 <!-- Section Commentaire -->
-    <hr><p>SECTION COMMENTAIRE</p>
+    <hr><h3>SECTION COMMENTAIRE</h3>
     <!-- Formulaire Commentaire -->
     <div class="comments_form">
-        <p>Mettre un commentaire</p>
+        <p>Mettre un commentaire :</p>
         <form method="POST">
             <input name="comment" type="text" placeholder="Entrez votre commentaire" required="required">
             <select name="note">
@@ -70,7 +70,7 @@
     <div class="comments_list">
     <?php
         if (empty(getRecipeComments($_GET['id']))){
-            echo "Aucun avis sur cette recette. Soyez le premier à en mettre un via le formulaire ci-dessus !";
+            echo "<p>Aucun avis sur cette recette. Soyez le premier à en mettre un via le formulaire ci-dessus !</p>";
         }
         else{
             foreach ($RecipeComments as $Comment){
