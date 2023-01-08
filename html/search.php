@@ -8,13 +8,42 @@
 </head>
 <body>
 	<?php include 'header.php'?>
+	<?php
+		// Récupère les résultats correspondants aux deux types de recherche et les fusionnent
+		$searchTitle = searchRecipesByTitle($_POST['search']);
+		$searchIngredients = searchRecipesByIngredient($_POST['search']);
+		$searchResults = array_merge($searchTitle,$searchIngredients);
+		// Recherche les éventuels doublons
+		$tailleResults = count($searchResults);
+		$doublonList = [];
+		for($i=0; $i<$tailleResults-1; $i++){
+			$firstId = $searchResults[$i]['id'];
+			for($j = ($i + 1); $j<$tailleResults; $j++){
+				$secondId = $searchResults[$j]['id'];
+				if($firstId == $secondId){
+					array_unshift($doublonList,$j);
+				}
+			}
+		}
+		// Supprime les doublons
+		foreach($doublonList as $doublon){
+			unset($searchResults[$doublon]);
+		}
+	?>
 	<p>Page recherche</p>
 
-	<?php if (empty($_POST['search_bar'])){ ?>
-		<p>Veuillez indiquer une recette dans la recherche ci-dessus.</p>
-	<?php } else { ?>
-		<p>Votre résultat pour : <?php echo $_POST['search_bar']; ?></p>
-	<?php } ?>
+	<?php if (empty($_POST['search'])){
+		echo "<p>Veuillez indiquer une recette dans la recherche ci-dessus.</p>";
+	}
+	else{
+		if (empty($searchResults)){
+			echo "<p>Aucun résultat trouvé !";
+		}
+		else{
+			echo "<p>Résultats trouvés : ".count($searchResults)."</p>";
+
+		}
+	} ?>
 	<?php include 'footer.html' ?>
 </body>
 </html>
