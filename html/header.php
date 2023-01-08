@@ -10,7 +10,7 @@
 	<p>Trouvez plein de recettes sur cet incroyable site qui n'est en fait qu'un prototype réalisé par les bg de BTS SNIR !</p>
 	<div>
 		<form class="search_bar" action="/html/search.php" method="POST">
-			<input type="search" name="search_bar" placeholder="Entrez une recette souhaitée">
+			<input type="search" name="search" placeholder="Entrez un nom de recette / ingrédients">
 			<button type="submit">Rechercher</button>
 		</form>
 	</div>
