@@ -13,11 +13,11 @@
     <?php
     if (!empty($_POST)){
         if (hasAlreadyRated($_POST['id'], $_SERVER['REMOTE_ADDR'])){
-            echo "Erreur : Vous avez déjà émis un avis sur cette recette !";
+            echo "<p class='message_comment'>Erreur : Vous avez déjà émis un avis sur cette recette !</p>";
         }
         else{
         rateRecipe($_POST['id'], $_SERVER['REMOTE_ADDR'], $_POST['note'], $_POST['comment']);
-        echo "Votre avis a été publié !";
+        echo "<p class='message_comment'>Votre avis a été publié !</p>";
         }
     }
     ?>
@@ -52,8 +52,8 @@
     <div class="comments_form">
         <p>Mettre un commentaire :</p>
         <form method="POST">
-            <input name="comment" type="text" placeholder="Entrez votre commentaire" required="required">
-            <select name="note">
+            <textarea name="comment" placeholder="Entrez votre commentaire" required="required"></textarea></br>
+            <select required="required" name="note">
                 <option value="">Choisissez une note</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
