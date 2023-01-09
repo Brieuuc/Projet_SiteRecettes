@@ -20,6 +20,7 @@ header h1{
 	height: 250px;
 }
 
+
 .search_bar{
 	margin: 0 auto;
 	padding: 10px 5px;
@@ -29,11 +30,11 @@ header h1{
 }
 
 .search_bar input{
-	width: 210px;
+	width: 250px;
 }
 
 footer{
-	height: 100px;
+	height: 75px;
 	width: 100%;
 	background-color: #cf6757;
 	color: white;
@@ -117,6 +118,31 @@ footer{
 	width: 60px;
 }
 
+.message_comment{
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+}
+
+.comments_form{
+	padding-bottom: 15px;
+}
+
+.comments_form textarea{
+	width: 300px;
+	resize: none;
+}
+
+.comments_form select{
+	width: 170px;
+}
+
+.comments_form button{
+	width: 130px;
+}
+
+
+
 .form_title{
 	width: 100%;
 	font-weight: bold;
@@ -195,4 +221,8 @@ footer{
 	width: 35%;
 	margin: 15px auto;
 	border: 2px solid #545454;
+}
+
+.comments_list{
+	margin: 15px;
 }

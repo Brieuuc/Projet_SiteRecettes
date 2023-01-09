@@ -35,7 +35,7 @@
             <label>Consignes de préparation</label><br>
             <textarea name="steps" placeholder="Indiquez les consignes de préparations" required="required"><?php echo $Recipe['steps']?></textarea><br>
             <label>Temps de préparation (en minutes)</label><br>
-            <input type="number" name="time" value="<?php echo $Recipe['time']?>" placeholder="0" required="required"><br>
+            <input type="number" name="time" min="0" value="<?php echo $Recipe['time']?>" placeholder="0" required="required"><br>
             <button type="submit" target="admin_modif.php?id=<?php echo $_GET['id']?>">Modifier la recette</button>
             <input name="id" type="hidden" value="<?php echo $_GET['id']?>" required="required"><br>
         </form>

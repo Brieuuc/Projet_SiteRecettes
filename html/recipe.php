@@ -69,6 +69,7 @@
     <!-- Affichage Commentaire(s) -->
     <div class="comments_list">
     <?php
+        
         if (empty(getRecipeComments($_GET['id']))){
             echo "<p>Aucun avis sur cette recette. Soyez le premier à en mettre un via le formulaire ci-dessus !</p>";
         }
@@ -77,6 +78,7 @@
                 echo "<div class='comment'>Note : ".$Comment['note']."<br>Commentaire : ".$Comment['comment']."</div>";
             }
         }
+        
     ?>
     </div>
 	<?php include 'footer.html' ?>

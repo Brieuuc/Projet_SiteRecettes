@@ -39,7 +39,7 @@
                 <label>Consignes de préparation</label><br>
                 <textarea name="steps" required="required" placeholder="Indiquez les consignes de préparations"></textarea><br>
                 <label>Temps de préparation (en minutes)</label><br>
-                <input name="time" type="number" required="required" placeholder="0"><br>
+                <input name="time" type="number" min="0" required="required" placeholder="0"><br>
                 <button type="submit">Créer la recette</button>
             </form>
         </div>
