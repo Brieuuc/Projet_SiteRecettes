@@ -188,6 +188,12 @@ footer{
 	margin: 5px;
 }
 
+.index_recette a{
+	text-decoration: none;
+	color: #cf6757;
+	font-weight: bold;
+}
+
 .result_list{
 	display: inline;
 }
