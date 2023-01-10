@@ -56,7 +56,7 @@
 				<div class='search_recette_".($pas%2)."'>
 					<h3>".$Recipe['title']."</h3>
 					<p>Note : ".$Note." - Temps de préparation : ".$Recipe['time']." minutes</p>
-					<a href='recipe?id=".$Recipe['id']."'>Voir la recette</a>
+					<a href='recipe.php?id=".$Recipe['id']."'>Voir la recette</a>
 				</div>";
 				$pas++;
 			}

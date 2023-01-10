@@ -26,7 +26,7 @@
 					<h2>Notre unique recette</h2>
 					<h3>".$Recipe['title']."</h3>
 					<p>Note : Aucune - Temps de préparation : ".$Recipe['time']."</p>
-					<a href='recipe?id=".$Recipe['id']."'>Voir la recette</a>
+					<a href='recipe.php?id=".$Recipe['id']."'>Voir la recette</a>
 				</div>
 				";
 			}
@@ -64,7 +64,7 @@
 				<h2>Notre dernière recette</h2>
 				<h3>".$RecipeLast['title']."</h3>
 				<p>Note : ".$NoteFinale." - Temps de préparation : ".$RecipeLast['time']." minutes</p>
-				<a href='recipe?id=".$RecipeLast['id']."'>Voir la recette</a>
+				<a href='recipe.php?id=".$RecipeLast['id']."'>Voir la recette</a>
 			</div>";
 // Affichage de la recette la mieux notée
 			$Note = moyenneNote($RecipeNote);
@@ -74,7 +74,7 @@
 					<h2>Recette la mieux notée</h2>
 					<h3>".$RecipeNote['title']."</h3>
 					<p>Note : ".$Note."/5 - Temps de préparation : ".$RecipeNote['time']." minutes</p>
-					<a href='recipe?id=".$RecipeNote['id']."'>Voir la recette</a>
+					<a href='recipe.php?id=".$RecipeNote['id']."'>Voir la recette</a>
 				</div>";
 			}
 
@@ -91,7 +91,7 @@
 				<h2>Recette la plus rapide</h2>
 				<h3>".$RecipeTime['title']."</h3>
 				<p>Note : ".$NoteFinale." - Temps de préparation : ".$RecipeTime['time']." minutes</p>
-				<a href='recipe?id=".$RecipeTime['id']."'>Voir la recette</a>
+				<a href='recipe.php?id=".$RecipeTime['id']."'>Voir la recette</a>
 			</div>";
 		}
 	}
