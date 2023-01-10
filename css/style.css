@@ -206,12 +206,25 @@ footer{
 	border: 2px solid #545454;
 }
 
+.search_recette_0 a, .search_recette_1 a{
+	text-decoration: none;
+	font-weight: bold;
+}
+
 .search_recette_0 *, .search_recette_1 *{
 	margin: 10px;
 }
 
 .search_recette_0{
 	background-color: #ce9b8e;
+}
+
+.search_recette_0 a{
+	color: #545454;
+}
+
+.search_recette_1 a{
+	color: #545454;
 }
 
 .search_recette_1{
