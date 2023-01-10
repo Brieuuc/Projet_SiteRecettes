@@ -20,7 +20,6 @@ header h1{
 	height: 250px;
 }
 
-
 .search_bar{
 	margin: 20px auto;
 	padding: 10px 5px;
@@ -74,6 +73,11 @@ footer{
 	color: white;
 	position: absolute;
 	right: 4%;
+}
+
+.admin_recette a{
+	text-decoration: none;
+	font-size: 24px;
 }
 
 #modif_form{
@@ -168,11 +172,6 @@ footer{
 	padding: 10px;
 	display: inline-block;
 	word-wrap: break-word;
-}
-
-.logo_manage{
-	height: 32px;
-	width: 32px;
 }
 
 .affichage_recette{

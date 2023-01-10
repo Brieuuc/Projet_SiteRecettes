@@ -54,9 +54,9 @@
                     <div class="admin_recette">
                         <p>ID : <?php echo $Recipe['id']?></br>
                         Nom : <?php echo $Recipe['title']?></p>
-                        <a href="../html/recipe.php?id=<?php echo $Recipe['id']?>" title="Voir la recette"><img src="../images/eye.png" class="logo_manage" alt="Voir"></img></a>
-                        <a href="admin_modif.php?id=<?php echo $Recipe['id']?>" title="Modifier la recette"><img src="../images/modify.png" class="logo_manage" alt="Modifier"></img></a>
-                        <a href="admin.php?id=<?php echo $Recipe['id']?>" title="Supprimer la recette"><img src="../images/delete.png" class="logo_manage" alt="Supprimer"></img></a>
+                        <a href="../html/recipe.php?id=<?php echo $Recipe['id']?>" title="Voir la recette">👀</a>
+                        <a href="admin_modif.php?id=<?php echo $Recipe['id']?>" title="Modifier la recette">⚙️</a>
+                        <a href="admin.php?id=<?php echo $Recipe['id']?>" title="Supprimer la recette">🚮</a>
                     </div><?php
                 }
             }

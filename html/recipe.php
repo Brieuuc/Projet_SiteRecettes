@@ -38,7 +38,7 @@
         <!-- Affichage Note / Temps de préparation SI AUCUN AVIS-->
         <?php
         $RecipeComments = getRecipeComments($_GET['id']);
-        echo "<div>Note des internautes : ".$NoteFinale." (".count($RecipeComments)." avis)  -  <img src='../images/hourglass.png' class='logo_manage' title='Temps' alt='Temps'>".$Recipe['time']." minutes</div>";
+        echo "<div>Note des internautes : ".$NoteFinale." (".count($RecipeComments)." avis) |⌛".$Recipe['time']." minutes</div>";
         ?>
         <!-- Affichage Ingrédients / Consignes de préparation -->
         <h3>Ingrédients</h3>
