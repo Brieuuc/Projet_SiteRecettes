@@ -9,6 +9,7 @@
 </head>
 <body>
 	<?php include '../html/header.php'?>
+    <a class="admin_return_button" href="admin.php">RETOUR sur page Admin</a>
 <!-- PHP Modification de recette -->
     <?php
     if (empty($_POST)){
@@ -21,7 +22,7 @@
         savePreptime($_POST['id'],$_POST['time']);
         $Recipe = getRecipe($_POST['id']);
         ?><p class="result_action"><?php echo "La recette d'ID = ".$_POST['id']." a été modifiée !";?></p>
-        <a href="admin.php">RETOUR sur page Admin</a><?php
+        <?php
     }
     ?>
 <!-- Formulaire Modification de recette -->

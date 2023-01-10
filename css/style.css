@@ -22,7 +22,7 @@ header h1{
 
 
 .search_bar{
-	margin: 0 auto;
+	margin: 20px auto;
 	padding: 10px 5px;
 	background-color: #cf6757;
 	border-top: black solid 1px;
@@ -79,7 +79,7 @@ footer{
 #modif_form{
 	width: 25%;
 	height: 620px;
-	margin: 40px auto;
+	margin: 20px auto;
 	padding: 15px;
 	background-color: #e8d8d4;
 	text-align: center;
@@ -229,9 +229,17 @@ footer{
 
 .admin_button{
 	padding: 4px;
-	
 	right: 4%;
 	text-decoration: none;
 	color: white;
 	border: 1px solid white;
+}
+
+.admin_return_button{
+	padding: 4px;
+	margin: 8px;
+	right: 4%;
+	color: black;
+	text-decoration: none;
+	border: 1px solid black;
 }
