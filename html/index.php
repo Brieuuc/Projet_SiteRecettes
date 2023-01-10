@@ -11,12 +11,12 @@
 	<?php include 'header.php' ?>
 <!-- Accueil si aucune recette -->
 	<?php if (empty(getAllRecipes())){
-		echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>Malheuresement il n'y a pour le moment aucune recette référencée...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+		echo "<p class='message_accueil'>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>Malheuresement il n'y a pour le moment aucune recette référencée...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 	}
 	else{
 		$AllRecipes = getAllRecipes();
 		if (count($AllRecipes) == 1){
-			echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site ne comporte qu'une seule recette...<br>";
+			echo "<p class='message_accueil'>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site ne comporte qu'une seule recette...<br>";
 			foreach ($AllRecipes as $Recipe){
 			}
 			$RecipeComments = getRecipeComments($Recipe['id']);
@@ -58,7 +58,7 @@
 			else{
 				$NoteFinale = $Note.'/5';
 			}
-			echo "<p>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site comporte ".count($AllRecipes)." recettes.<br>";
+			echo "<p class='message_accueil'>Bienvenue sur notre site. Vous y trouverez une multitude de recettes.<br>A ce jour notre site comporte ".count($AllRecipes)." recettes.<br>";
 			echo "
 			<div class='index_recette'>
 				<h2>Notre dernière recette</h2>
