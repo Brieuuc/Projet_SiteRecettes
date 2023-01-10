@@ -34,7 +34,7 @@ header h1{
 }
 
 footer{
-	height: 75px;
+	height: 90px;
 	width: 100%;
 	background-color: #cf6757;
 	color: white;
@@ -225,4 +225,13 @@ footer{
 
 .comments_list{
 	margin: 15px;
+}
+
+.admin_button{
+	padding: 4px;
+	
+	right: 4%;
+	text-decoration: none;
+	color: white;
+	border: 1px solid white;
 }
