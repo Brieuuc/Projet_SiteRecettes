@@ -28,7 +28,7 @@
 <!-- Formulaire Modification de recette -->
     <div id="modif_form"> 
         <form name="modif" method="POST">
-            <p class="form_title">Modifier une recette</p><br>
+            <p class="form_title">Modifier une recette | ID = <?php echo $Recipe['id']?></p><br>
             <label>Nom</label><br>
             <input type="text" name="title" value="<?php echo $Recipe['title']?>" placeholder="Indiquez le nom de la recette" required="required"><br>
             <label>Liste des ingrédients</label><br>
