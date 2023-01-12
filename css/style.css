@@ -122,7 +122,15 @@ footer{
 	width: 60px;
 }
 
-.message_comment{
+.message_comment_success{
+	color:green;
+}
+
+.message_comment_erreur{
+	color:red;
+}
+
+.message_comment_erreur, .message_comment_success {	
 	text-align: center;
 	font-weight: bold;
 	font-size: larger;

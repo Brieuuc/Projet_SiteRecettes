@@ -13,11 +13,11 @@
     <?php
     if (!empty($_POST)){
         if (hasAlreadyRated($_POST['id'], $_SERVER['REMOTE_ADDR'])){
-            echo "<p class='message_comment'>Erreur : Vous avez déjà émis un avis sur cette recette !</p>";
+            echo "<p class='message_comment_erreur'>Erreur : Vous avez déjà émis un avis sur cette recette !</p>";
         }
         else{
         rateRecipe($_POST['id'], $_SERVER['REMOTE_ADDR'], $_POST['note'], $_POST['comment']);
-        echo "<p class='message_comment'>Votre avis a été publié !</p>";
+        echo "<p class='message_comment_success'>Votre avis a été publié !</p>";
         }
     }
     ?>
